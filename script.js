@@ -60,14 +60,16 @@ let newWords1 = words1.map((el) => {
 console.log(newWords1);
 
 // 11----------------------------------------
-let element = document.querySelectorAll(".element");
+let elements = [];
+for (let index = 0; index < 4; index++) {
+  let p = document.createElement("p");
+  elements.push(p);
+}
 
-let arr = Array.from(element);
-
-arr.map(function (el) {
-  el.textContent = "giorgi";
+elements.map((p) => {
+  p.textContent = "Giorgi";
+  document.body.appendChild(p);
 });
-
 // 12----------------------------------------
 
 let newNumbers3 = numbers.map((el) => {
@@ -77,6 +79,17 @@ let newNumbers3 = numbers.map((el) => {
 console.log(newNumbers3);
 
 // 13----------------------------------------
+let elements1 = [];
+
+for (let index = 0; index < 5; index++) {
+  let h1 = document.createElement("h1");
+  elements1.push(h1);
+}
+
+elements1.forEach((h1) => {
+  h1.textContent = "Kostava";
+  document.body.appendChild(h1);
+});
 
 // 14----------------------------------------
 
@@ -98,16 +111,25 @@ for (let index = numbers.length - 1; index >= 0; index--) {
 }
 
 // 17----------------------------------------
+let divs = [];
+
+for (let index = 0; index < 5; index++) {
+  let div = document.createElement("div");
+  document.body.appendChild(div);
+  div.style.backgroundColor = "lightblue";
+  div.style.width = "150px";
+  div.style.height = "50px";
+  divs.push(div);
+}
 
 // 18----------------------------------------
 let nums = [2, 3, 4];
-for (let index = 1; index < nums.length; index++) {
-  for (let i = 0; i < nums.length; i++) {
-    let num = nums[i];
 
-    for (let k = 1; k <= 10; k++) {
-      console.log(`${num} * ${index}`, num * k);
-    }
+for (let index = 1; index < nums.length; index++) {
+  let num = nums[index];
+
+  for (let k = 1; k <= 10; k++) {
+    console.log(`${num} * ${index}`, num * k);
   }
 }
 
@@ -119,3 +141,18 @@ let newNums = numbers.filter((el) => {
 console.log(newNums);
 
 // 20----------------------------------------
+let elements2 = [];
+
+for (let index = 0; index < 5; index++) {
+  let h2 = document.createElement("h2");
+  elements2.push(h2);
+  h2.textContent = "Giorgi Kostava";
+  elements2[0].classList.add("first_h2");
+}
+
+elements2.filter((h2) => {
+  if (h2.classList.length === 0) {
+    document.body.appendChild(h2);
+  } else {
+  }
+});
